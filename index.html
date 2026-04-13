@@ -1,472 +1,287 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zepbound - Premium Weight Loss Solution</title>
+    <title>Zepbound Tirzepatide - Premium Weight Loss Solution</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: Arial, sans-serif;
         }
         body {
-            background-color: #f8f9fc;
+            background-color: #f7f9fc;
             color: #333;
-            line-height: 1.7;
+            line-height: 1.6;
         }
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
-        .lang-switch {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 25px;
-        }
-        .lang-btn {
-            padding: 10px 22px;
-            border: none;
-            border-radius: 30px;
-            background: #ffffff;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .lang-btn.active {
-            background: #2ECC71;
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
-        }
         .header-banner {
-            background: linear-gradient(135deg, #2ECC71, #27AE60);
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
             color: white;
+            padding: 50px 30px;
+            border-radius: 24px;
             text-align: center;
-            padding: 45px 20px;
-            border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.25);
+            box-shadow: 0 8px 24px rgba(46, 204, 113, 0.2);
         }
         .header-banner h1 {
-            font-size: 30px;
-            margin-bottom: 10px;
+            font-size: 42px;
             font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
         }
         .header-banner p {
-            font-size: 16px;
+            font-size: 22px;
             opacity: 0.95;
+            font-weight: 400;
+        }
+        .lang-switch {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .lang-btn {
+            padding: 12px 32px;
+            margin: 0 8px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            color: #27ae60;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .lang-btn.active {
+            background: #27ae60;
+            color: white;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+        }
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         .product-img-section {
             text-align: center;
-            margin-bottom: 35px;
+            margin: 40px 0;
         }
         .product-img {
             max-width: 100%;
             height: auto;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
         }
         .img-caption {
-            font-size: 14px;
-            color: #666;
             margin-top: 12px;
-        }
-        .card {
-            background: #ffffff;
-            border-radius: 18px;
-            padding: 32px;
-            margin-bottom: 28px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
-        }
-        .card h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #222;
-            border-left: 5px solid #2ECC71;
-            padding-left: 15px;
-            font-weight: 600;
-        }
-        .card h3 {
-            font-size: 20px;
-            margin: 22px 0 12px;
-            color: #333;
-            font-weight: 600;
-        }
-        .tag {
-            display: inline-block;
-            padding: 6px 14px;
-            background: #e8f8f0;
-            color: #27AE60;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-right: 8px;
-            margin-bottom: 10px;
+            font-size: 16px;
+            color: #666;
             font-weight: 500;
         }
-        .list {
-            padding-left: 28px;
-            font-size: 16px;
-            color: #555;
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
-        .list li {
-            margin-bottom: 12px;
+        .card h2 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 6px solid #2ecc71;
         }
-        .card p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 15px;
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
         }
-        .param-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 15px;
-        }
-        .param-table th, .param-table td {
-            border: 1px solid #eee;
-            padding: 14px;
-            text-align: left;
-        }
-        .param-table th {
-            background: #f8f9fa;
-            color: #333;
+        .tag {
+            background: #e8f5e9;
+            color: #27ae60;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 18px;
             font-weight: 600;
         }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            background: #2ECC71;
-            color: white;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-            text-decoration: none;
-            font-weight: 700;
-            margin-top: 20px;
-            transition: background 0.3s ease;
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+        h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 25px 0 15px;
         }
-        .btn:hover {
-            background: #27AE60;
+        .list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list li {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .list li::before {
+            content: "•";
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 22px;
         }
         .lang-content {
             display: none;
         }
-        .lang-content.active {
+        .lang-content.en.active {
             display: block;
         }
-        .footer {
-            text-align: center;
-            font-size: 14px;
-            color: #999;
-            padding: 30px 0;
-            border-top: 1px solid #eee;
-            margin-top: 40px;
+        .lang-content.zh.active,
+        .lang-content.es.active {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="lang-switch">
-            <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
-            <button class="lang-btn" onclick="switchLang('en')">English</button>
-            <button class="lang-btn" onclick="switchLang('es')">Español</button>
-        </div>
+<div class="container">
+    <!-- 语言切换按钮 -->
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="switchLang('zh')">中文</button>
+        <button class="lang-btn active" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('es')">Español</button>
+    </div>
 
-        <div class="header-banner">
-            <h1 class="lang-content zh active">Zepbound 替尔泊肽 高端减重方案</h1>
-            <h1 class="lang-content en">Zepbound (Tirzepatide) - Premium Weight Loss Solution</h1>
-            <h1 class="lang-content es">Zepbound (Tirzepatida) - Solución Premium para la Pérdida de Peso</h1>
-            <p class="lang-content zh active">礼来原研 · 全球双靶点GLP-1/GIP减重明星产品</p>
-            <p class="lang-content en">Eli Lilly Original · Global Dual-Target GLP-1/GIP Weight Loss Star Product</p>
-            <p class="lang-content es">Investigación Original de Eli Lilly · Producto Estrella Global de Pérdida de Peso GLP-1/GIP de Doble Blanco</p>
-        </div>
+    <!-- 头部横幅 -->
+    <div class="header-banner">
+        <h1 class="lang-content zh">Zepbound 替尔泊肽 高端减重方案</h1>
+        <h1 class="lang-content en active">Zepbound (Tirzepatide) - Premium Weight Loss Solution</h1>
+        <h1 class="lang-content es">Zepbound (Tirzepatida) - Solución Premium para la Pérdida de Peso</h1>
+        
+        <p class="lang-content zh">礼来原研 · 全球双靶点GLP-1/GIP减重明星产品</p>
+        <p class="lang-content en active">Eli Lilly Original · Global Dual-Target GLP-1/GIP Weight Loss Star Product</p>
+        <p class="lang-content es">Investigación Original de Eli Lilly · Producto Estrella Global de Pérdida de Peso GLP-1/GIP</p>
+    </div>
 
-        <div class="product-img-section">
-            <img src="https://p3-flow-image-sign.byteimg.com/tos-cn-i-a9rns3fr3d/a49c.png~tplv-a9rns3fr3d-image.image" 
-                 alt="Zepbound Tirzepatide Injection Pen and Vial" 
-                 class="product-img">
-            <p class="img-caption lang-content zh active">图为Zepbound（替尔泊肽）一次性注射笔与单剂量药瓶</p>
-            <p class="img-caption lang-content en">Zepbound (Tirzepatide) Disposable Injection Pen and Single-Dose Vial</p>
-            <p class="img-caption lang-content es">Pluma de Inyección Desechable y Vial de Dosis Única de Zepbound (Tirzepatida)</p>
-        </div>
+    <!-- 产品图片区域 -->
+    <div class="product-img-section">
+        <img src="https://com077.github.io/photo_2026-04-14_02-51-59.jpg" 
+             alt="Zepbound Tirzepatide Injection Pen and Vial" 
+             class="product-img">
+        <p class="img-caption lang-content zh">图为Zepbound（替尔泊肽）一次性注射笔与单剂量药瓶</p>
+        <p class="img-caption lang-content en active">Zepbound (Tirzepatide) Disposable Injection Pen and Single-Dose Vial</p>
+        <p class="img-caption lang-content es">Pluma de Inyección Desechable y Vial de Dosis Única de Zepbound (Tirzepatida)</p>
+    </div>
 
+    <!-- 产品核心介绍 -->
+    <div class="card">
         <div class="lang-content zh active">
-            <div class="card">
-                <h2>产品核心介绍</h2>
+            <h2>产品核心介绍</h2>
+            <div class="tags">
                 <span class="tag">礼来原研</span>
                 <span class="tag">GLP-1/GIP双靶点</span>
                 <span class="tag">每周1次注射</span>
                 <span class="tag">全球热销</span>
-
-                <h3>药品基本信息</h3>
-                <ul class="list">
-                    <li><strong>通用名</strong>：替尔泊肽（Tirzepatide）</li>
-                    <li><strong>商品名</strong>：Zepbound（全球）、穆峰达（中国）</li>
-                    <li><strong>研发公司</strong>：美国礼来（Eli Lilly and Company）</li>
-                    <li><strong>作用机制</strong>：全球首个GLP-1/GIP双靶点激动剂，同时激活两种肠道激素，强效抑制食欲、延缓胃排空，从根源控制体重</li>
-                    <li><strong>核心优势</strong>：目前全球减重效果最强的处方药物之一，临床数据表现远超同类产品</li>
-                </ul>
-
-                <h3>核心临床效果</h3>
-                <ul class="list">
-                    <li>全球III期临床数据显示，72周治疗后，患者平均体重减轻约<strong>22.5%</strong>，部分患者减重超30%</li>
-                    <li>同时显著改善血糖、血脂、血压，全面优化代谢健康，对脂肪肝、睡眠呼吸暂停也有明确改善作用</li>
-                    <li>每周仅需1次皮下注射，操作便捷，依从性远高于每日注射制剂</li>
-                </ul>
             </div>
 
-            <div class="card">
-                <h2>剂型与规格</h2>
-                <table class="param-table">
-                    <thead>
-                        <tr>
-                            <th>规格</th>
-                            <th>剂型</th>
-                            <th>适用阶段</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2.5mg/0.5mL</td>
-                            <td>一次性注射笔/单剂量药瓶</td>
-                            <td>起始剂量（第1-4周）</td>
-                        </tr>
-                        <tr>
-                            <td>5mg/0.5mL</td>
-                            <td>一次性注射笔/单剂量药瓶</td>
-                            <td>剂量递增期</td>
-                        </tr>
-                        <tr>
-                            <td>7.5mg/0.5mL</td>
-                            <td>一次性注射笔/单剂量药瓶</td>
-                            <td>维持剂量</td>
-                        </tr>
-                        <tr>
-                            <td>10mg/0.5mL</td>
-                            <td>一次性注射笔/单剂量药瓶</td>
-                            <td>维持剂量</td>
-                        </tr>
-                        <tr>
-                            <td>12.5mg/0.5mL</td>
-                            <td>一次性注射笔/单剂量药瓶</td>
-                            <td>高剂量维持</td>
-                        </tr>
-                        <tr>
-                            <td>15mg/0.5mL</td>
-                            <td>一次性注射笔/单剂量药瓶</td>
-                            <td>最大推荐剂量</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="font-size:15px; color:#666; margin-top:15px;">* 建议从低剂量逐步递增，根据个人耐受情况调整至目标维持剂量</p>
-            </div>
+            <h3>药品基本信息</h3>
+            <ul class="list">
+                <li><strong>通用名：</strong>替尔泊肽（Tirzepatide）</li>
+                <li><strong>商品名：</strong>Zepbound（全球）、穆峰达（中国）</li>
+                <li><strong>研发公司：</strong>美国礼来（Eli Lilly and Company）</li>
+                <li><strong>作用机制：</strong>全球首个GLP-1/GIP双靶点激动剂，同时激活两种肠道激素，强效抑制食欲、延缓胃排空，从根源控制体重</li>
+                <li><strong>核心优势：</strong>目前全球减重效果最强的处方药物之一，临床数据表现远超同类产品</li>
+            </ul>
 
-            <div class="card">
-                <h2>适用人群</h2>
-                <ul class="list">
-                    <li>成人肥胖人群（BMI≥30），需要高效减重方案</li>
-                    <li>成人超重人群（BMI≥27），伴随体重相关健康问题</li>
-                    <li>反复减肥失败、管不住嘴、易暴饮暴食人群</li>
-                    <li>追求高品质、高效能体重管理的高端人群</li>
-                </ul>
-            </div>
+            <h3>核心临床效果</h3>
+            <ul class="list">
+                <li>全球III期临床数据显示，72周治疗后，患者平均体重减轻约22.5%，部分患者减重超30%</li>
+                <li>同时显著改善2型糖尿病患者血糖、血压、血脂等多项代谢指标</li>
+                <li>每周仅需1次皮下注射，便捷性高，患者依从性好</li>
+            </ul>
         </div>
 
-        <div class="lang-content en">
-            <div class="card">
-                <h2>Product Introduction</h2>
+        <div class="lang-content en active">
+            <h2>Product Core Introduction</h2>
+            <div class="tags">
                 <span class="tag">Eli Lilly Original</span>
-                <span class="tag">Dual-Target GLP-1/GIP</span>
+                <span class="tag">GLP-1/GIP Dual-Target</span>
                 <span class="tag">Once-Weekly Injection</span>
                 <span class="tag">Global Bestseller</span>
-
-                <h3>Basic Product Information</h3>
-                <ul class="list">
-                    <li><strong>Generic Name</strong>: Tirzepatide</li>
-                    <li><strong>Brand Name</strong>: Zepbound (Global), Mounjaro (China)</li>
-                    <li><strong>Manufacturer</strong>: Eli Lilly and Company (USA)</li>
-                    <li><strong>Mechanism of Action</strong>: The world's first dual-target GLP-1/GIP agonist, which simultaneously activates two intestinal hormones to powerfully suppress appetite, delay gastric emptying, and control weight from the root</li>
-                    <li><strong>Core Advantage</strong>: One of the most effective prescription weight loss drugs in the world, with clinical data far exceeding similar products</li>
-                </ul>
-
-                <h3>Core Clinical Efficacy</h3>
-                <ul class="list">
-                    <li>Global Phase III clinical data shows that after 72 weeks of treatment, patients lost an average of <strong>22.5%</strong> of their body weight, and some patients lost more than 30%</li>
-                    <li>It also significantly improves blood sugar, blood lipids, blood pressure, comprehensively optimizes metabolic health, and has a clear improvement effect on fatty liver and sleep apnea</li>
-                    <li>Only one subcutaneous injection per week, easy to operate, with far higher compliance than daily injection preparations</li>
-                </ul>
             </div>
 
-            <div class="card">
-                <h2>Dosage Forms & Specifications</h2>
-                <table class="param-table">
-                    <thead>
-                        <tr>
-                            <th>Specification</th>
-                            <th>Dosage Form</th>
-                            <th>Application Stage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2.5mg/0.5mL</td>
-                            <td>Disposable Pen/Single-Dose Vial</td>
-                            <td>Starting Dose (Weeks 1-4)</td>
-                        </tr>
-                        <tr>
-                            <td>5mg/0.5mL</td>
-                            <td>Disposable Pen/Single-Dose Vial</td>
-                            <td>Dose Escalation Period</td>
-                        </tr>
-                        <tr>
-                            <td>7.5mg/0.5mL</td>
-                            <td>Disposable Pen/Single-Dose Vial</td>
-                            <td>Maintenance Dose</td>
-                        </tr>
-                        <tr>
-                            <td>10mg/0.5mL</td>
-                            <td>Disposable Pen/Single-Dose Vial</td>
-                            <td>Maintenance Dose</td>
-                        </tr>
-                        <tr>
-                            <td>12.5mg/0.5mL</td>
-                            <td>Disposable Pen/Single-Dose Vial</td>
-                            <td>High-Dose Maintenance</td>
-                        </tr>
-                        <tr>
-                            <td>15mg/0.5mL</td>
-                            <td>Disposable Pen/Single-Dose Vial</td>
-                            <td>Maximum Recommended Dose</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="font-size:15px; color:#666; margin-top:15px;">* It is recommended to gradually increase from a low dose and adjust to the target maintenance dose according to personal tolerance</p>
-            </div>
+            <h3>Drug Basic Information</h3>
+            <ul class="list">
+                <li><strong>Generic Name:</strong> Tirzepatide</li>
+                <li><strong>Brand Name:</strong> Zepbound (Global), Mounjaro (China)</li>
+                <li><strong>Manufacturer:</strong> Eli Lilly and Company, USA</li>
+                <li><strong>Mechanism of Action:</strong> The world's first GLP-1/GIP dual-target agonist, which activates two intestinal hormones simultaneously, powerfully suppresses appetite, delays gastric emptying, and controls weight from the root</li>
+                <li><strong>Core Advantage:</strong> One of the strongest prescription weight loss drugs in the world, with clinical data far exceeding similar products</li>
+            </ul>
 
-            <div class="card">
-                <h2>Target Users</h2>
-                <ul class="list">
-                    <li>Adults with obesity (BMI≥30) in need of an efficient weight loss solution</li>
-                    <li>Adults with overweight (BMI≥27) with weight-related health issues</li>
-                    <li>People who have repeatedly failed to lose weight, can't control their diet, and are prone to overeating</li>
-                    <li>High-end people pursuing high-quality, high-efficiency weight management</li>
-                </ul>
-            </div>
+            <h3>Core Clinical Efficacy</h3>
+            <ul class="list">
+                <li>Global Phase III clinical data shows that after 72 weeks of treatment, patients lose an average of about 22.5% of their body weight, and some patients lose more than 30%</li>
+                <li>Significantly improves multiple metabolic indicators such as blood sugar, blood pressure, and blood lipids in patients with type 2 diabetes</li>
+                <li>Only one subcutaneous injection per week, high convenience, good patient compliance</li>
+            </ul>
         </div>
 
         <div class="lang-content es">
-            <div class="card">
-                <h2>Introducción del Producto</h2>
+            <h2>Introducción Central del Producto</h2>
+            <div class="tags">
                 <span class="tag">Investigación Original de Eli Lilly</span>
-                <span class="tag">Doble Blanco GLP-1/GIP</span>
+                <span class="tag">Diana Dual GLP-1/GIP</span>
                 <span class="tag">Inyección Semanal</span>
-                <span class="tag">Éxito de Ventas Global</span>
-
-                <h3>Información Básica del Producto</h3>
-                <ul class="list">
-                    <li><strong>Nombre Genérico</strong>: Tirzepatida</li>
-                    <li><strong>Nombre Comercial</strong>: Zepbound (Global), Mounjaro (China)</li>
-                    <li><strong>Fabricante</strong>: Eli Lilly and Company (EE.UU.)</li>
-                    <li><strong>Mecanismo de Acción</strong>: El primer agonista de doble blanco GLP-1/GIP del mundo, que activa simultáneamente dos hormonas intestinales para suprimir poderosamente el apetito, retardar el vaciado gástrico y controlar el peso desde la raíz</li>
-                    <li><strong>Ventaja Principal</strong>: Uno de los medicamentos recetados para la pérdida de peso más efectivos del mundo, con datos clínicos que superan ampliamente a productos similares</li>
-                </ul>
-
-                <h3>Eficacia Clínica Principal</h3>
-                <ul class="list">
-                    <li>Los datos clínicos globales de Fase III muestran que después de 72 semanas de tratamiento, los pacientes perdieron un promedio de <strong>22.5%</strong> de su peso corporal, y algunos pacientes perdieron más del 30%</li>
-                    <li>También mejora significativamente el azúcar en sangre, los lípidos en sangre, la presión arterial, optimiza integralmente la salud metabólica y tiene un efecto claro en la mejora de la esteatosis hepática y la apnea del sueño</li>
-                    <li>Solo una inyección subcutánea por semana, fácil de operar, con una adherencia mucho mayor que las preparaciones de inyección diaria</li>
-                </ul>
+                <span class="tag">Bestseller Mundial</span>
             </div>
 
-            <div class="card">
-                <h2>Formas Farmacéuticas y Especificaciones</h2>
-                <table class="param-table">
-                    <thead>
-                        <tr>
-                            <th>Especificación</th>
-                            <th>Forma Farmacéutica</th>
-                            <th>Etapa de Aplicación</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2.5mg/0.5mL</td>
-                            <td>Pluma Desechable/Vial de Dosis Única</td>
-                            <td>Dosis Inicial (Semanas 1-4)</td>
-                        </tr>
-                        <tr>
-                            <td>5mg/0.5mL</td>
-                            <td>Pluma Desechable/Vial de Dosis Única</td>
-                            <td>Periodo de Aumento de Dosis</td>
-                        </tr>
-                        <tr>
-                            <td>7.5mg/0.5mL</td>
-                            <td>Pluma Desechable/Vial de Dosis Única</td>
-                            <td>Dosis de Mantenimiento</td>
-                        </tr>
-                        <tr>
-                            <td>10mg/0.5mL</td>
-                            <td>Pluma Desechable/Vial de Dosis Única</td>
-                            <td>Dosis de Mantenimiento</td>
-                        </tr>
-                        <tr>
-                            <td>12.5mg/0.5mL</td>
-                            <td>Pluma Desechable/Vial de Dosis Única</td>
-                            <td>Mantenimiento de Alta Dosis</td>
-                        </tr>
-                        <tr>
-                            <td>15mg/0.5mL</td>
-                            <td>Pluma Desechable/Vial de Dosis Única</td>
-                            <td>Dosis Máxima Recomendada</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p style="font-size:15px; color:#666; margin-top:15px;">* Se recomienda aumentar gradualmente desde una dosis baja y ajustar a la dosis de mantenimiento objetivo según la tolerancia personal</p>
-            </div>
+            <h3>Información Básica del Medicamento</h3>
+            <ul class="list">
+                <li><strong>Nombre Genérico:</strong> Tirzepatida</li>
+                <li><strong>Nombre Comercial:</strong> Zepbound (Mundial), Mounjaro (China)</li>
+                <li><strong>Fabricante:</strong> Eli Lilly and Company, EE. UU.</li>
+                <li><strong>Mecanismo de Acción:</strong> El primer agonista de doble diana GLP-1/GIP del mundo, que activa dos hormonas intestinales simultáneamente, suprime poderosamente el apetito, retrasa el vaciado gástrico y controla el peso desde la raíz</li>
+                <li><strong>Ventaja Central:</strong> Uno de los medicamentos recetados para la pérdida de peso más fuertes del mundo, con datos clínicos que superan ampliamente a productos similares</li>
+            </ul>
 
-            <div class="card">
-                <h2>Usuarios Objetivo</h2>
-                <ul class="list">
-                    <li>Adultos con obesidad (IMC≥30) que necesitan una solución eficaz para la pérdida de peso</li>
-                    <li>Adultos con sobrepeso (IMC≥27) con problemas de salud relacionados con el peso</li>
-                    <li>Personas que han fracasado repetidamente en la pérdida de peso, no pueden controlar su dieta y son propensas a comer en exceso</li>
-                    <li>Personas de alto nivel que buscan un control de peso de alta calidad y alta eficiencia</li>
-                </ul>
-            </div>
-        </div>
-
-        <a href="#" class="btn lang-content zh active">立即咨询获取方案</a>
-        <a href="#" class="btn lang-content en">Contact Now for Solution</a>
-        <a href="#" class="btn lang-content es">Contáctanos Ahora para la Solución</a>
-
-        <div class="footer">
-            <p class="lang-content zh active">© 2026 Zepbound 产品展示页 | 礼来为Zepbound原研厂商</p>
-            <p class="lang-content en">© 2026 Zepbound Product Showcase | Eli Lilly is the original manufacturer of Zepbound</p>
-            <p class="lang-content es">© 2026 Página de Muestra de Producto Zepbound | Eli Lilly es el fabricante original de Zepbound</p>
+            <h3>Eficacia Clínica Central</h3>
+            <ul class="list">
+                <li>Los datos clínicos mundiales de Fase III muestran que después de 72 semanas de tratamiento, los pacientes pierden un promedio de aproximadamente un 22,5% de su peso corporal, y algunos pacientes pierden más de un 30%</li>
+                <li>Mejora significativamente múltiples indicadores metabólicos como azúcar en sangre, presión arterial y lípidos en sangre en pacientes con diabetes tipo 2</li>
+                <li>Solo una inyección subcutánea por semana, alta conveniencia, buena adherencia del paciente</li>
+            </ul>
         </div>
     </div>
+</div>
 
-    <script>
-        function switchLang(lang) {
-            document.querySelectorAll('.lang-content').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.querySelectorAll('.lang-btn').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.querySelectorAll(`.lang-content.${lang}`).forEach(el => {
-                el.classList.add('active');
-            });
-            event.target.classList.add('active');
-        }
-    </script>
+<script>
+    // 初始化默认语言为英语
+    document.addEventListener('DOMContentLoaded', function() {
+        switchLang('en');
+    });
+
+    function switchLang(lang) {
+        // 移除所有按钮的active状态
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        // 给当前点击的按钮添加active状态
+        document.querySelector(`.lang-btn[onclick="switchLang('${lang}')"]`).classList.add('active');
+
+        // 隐藏所有语言内容
+        document.querySelectorAll('.lang-content').forEach(el => {
+            el.classList.remove('active');
+        });
+        // 显示当前选择的语言内容
+        document.querySelectorAll(`.lang-content.${lang}`).forEach(el => {
+            el.classList.add('active');
+        });
+    }
+</script>
 </body>
 </html>
